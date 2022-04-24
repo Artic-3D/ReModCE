@@ -64,7 +64,7 @@ namespace ReModCE.Managers
                 riskyFunctionAllowed = true;
             }
 
-            RiskyFunctionAllowed = riskyFunctionAllowed;
+            RiskyFunctionAllowed = true;
             OnRiskyFunctionsChanged?.Invoke(RiskyFunctionAllowed);
         }
     }
