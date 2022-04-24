@@ -49,7 +49,7 @@ namespace ReModCE.Loader
         public override void OnApplicationStart()
         {
             var category = MelonPreferences.CreateCategory("ReModCE");
-            _paranoidMode = category.CreateEntry("ParanoidMode", false, "Paranoid Mode",
+            _paranoidMode = category.CreateEntry("ParanoidMode", true, "Paranoid Mode",
                 "If enabled ReModCE will not automatically download the latest version from GitHub. Manual update will be required.",
                 true);
             
