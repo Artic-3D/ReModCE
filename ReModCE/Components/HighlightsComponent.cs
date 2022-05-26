@@ -20,6 +20,7 @@ namespace ReModCE.Components
         private ConfigValue<Color> FriendsColor;
         private ConfigValue<Color> OthersColor;
         private ConfigValue<bool> ESPEnabled;
+        private ConfigValue<KeyCode> ESPHotkey;
         
         private ReMirroredWingToggle _espMirroredToggle;
         private ReMenuToggle _espToggle;
@@ -33,6 +34,8 @@ namespace ReModCE.Components
 
             ESPEnabled = new ConfigValue<bool>(nameof(ESPEnabled), false);
             ESPEnabled.OnValueChanged += () => _espToggle.Toggle(ESPEnabled);
+
+            ESPHotkey = new ConfigValue<KeyCode>(nameof(ESPHotkey), KeyCode.E);
 
             RiskyFunctionsManager.Instance.OnRiskyFunctionsChanged += allowed =>
             {
@@ -113,6 +116,14 @@ namespace ReModCE.Components
                 return;
 
             GetHighlightsFX(player.field_Private_APIUser_0).Method_Public_Void_Renderer_Boolean_0(selectRegion.GetComponent<Renderer>(), highlighted);
+        }
+
+        public override void OnUpdate()
+        {
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(ESPHotkey))
+            {
+                ESPEnabled.SetValue(!ESPEnabled);
+            }
         }
 
         public override void OnPlayerJoined(Player player)
