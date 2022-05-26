@@ -7,7 +7,7 @@
 
 		<FileAlignment>512</FileAlignment>
 		<Deterministic>true</Deterministic>
-		<TargetFrameworks>net472;net6</TargetFrameworks>
+		<TargetFrameworks>net472</TargetFrameworks>
 		<LangVersion>latest</LangVersion>
 		<CopyToVrc Condition="'$(CopyToVrc)'!='false'">true</CopyToVrc>
 		<DebugSymbols Condition="'$(Configuration)'=='Release'">false</DebugSymbols>
@@ -15,7 +15,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(VRCPath)'==''">
-		<VRCPath Condition="Exists('C:/Program Files (x86)/Steam/steamapps/common/VRChat')">C:/Program Files (x86)/Steam/steamapps/common/VRChat</VRCPath>
+		<VRCPath Condition="Exists('C:\Games\Steam\steamapps\common\VRChat')">C:\Games\Steam\steamapps\common\VRChat</VRCPath>
 		<VRCPath Condition="Exists('$(HOME)/.steam/steam/steamapps/common/VRChat')">$(HOME)/.steam/steam/steamapps/common/VRChat</VRCPath>
 		<VRCPath Condition="Exists('S:\Games\steamapps\common\VRChat')">S:\Games\steamapps\common\VRChat</VRCPath>
 	</PropertyGroup>
